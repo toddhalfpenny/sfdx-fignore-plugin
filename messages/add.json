@@ -1,0 +1,9 @@
+{
+  "commandDescription": "Add an entry to your .forceignore file",
+  "nameFlagDescription": "name of entry",
+  "metadataTypeFlagDescription": "metadata type",
+  "localFlagDescription": "Local",
+  "remoteFlagDescription": "Remote",
+  "entryExists": "An entry for that metadata item already exists in the .forceignore file.",
+  "errorNoOrgResults": "No results found for the org '%s'."
+}
