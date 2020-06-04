@@ -18,7 +18,7 @@ export default class Add extends SfdxCommand {
     'AppMenu',
     'AuraDefinitionBundle',
     //'CustomField',
-    //'CustomObject',
+    'CustomObject',
     //'CustomMetadata',
     'EmailTemplate',
     'FlexiPage',
@@ -125,8 +125,8 @@ export default class Add extends SfdxCommand {
       //  return '';
       //case 'CustomMetadata' :
       //  return '';
-      //case 'CustomObject' :
-      //  return '';
+      case 'CustomObject' :
+       return '.object';
       case 'EmailTemplate':
         return '.email';
       case 'FlexiPage' :
