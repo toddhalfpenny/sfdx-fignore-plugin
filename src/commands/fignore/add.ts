@@ -49,7 +49,7 @@ export default class Add extends SfdxCommand {
   protected static flagsConfig = {
     // flag with a value (-n, --name=VALUE)
     name: flags.string({char: 'n', description: messages.getMessage('nameFlagDescription'), required: true}),
-    metadatatype: flags.string({char: 't', description: messages.getMessage('metadataTypeFlagDescription'),required :true, options: Add.validMetadataTypes}),
+    metadatatype: flags.string({char: 'm', description: messages.getMessage('metadataTypeFlagDescription'),required :true, options: Add.validMetadataTypes}),
     //TODO add local syntax
     //local: flags.boolean({char: 'l', description: messages.getMessage('localFlagDescription'), exclusive: ['remote']}),
     remote: flags.boolean({char: 'r', description: messages.getMessage('remoteFlagDescription'), exclusive: ['local'], default:true})

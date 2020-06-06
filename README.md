@@ -54,16 +54,16 @@ USAGE
   $ sfdx fignore:add [FILE]
 
 OPTIONS
+  -m, 
+  --metadatatype=ApexClass|AppMenu|AuraDefinitionBundle|CustomObject|EmailTemplate|FlexiPage|Layout|LightningComponentBu
+  ndle|NavigationMenu|Network|Portal|Profile|Role|SiteDotCom|StaticResource
+      (required) metadata type
+
   -n, --name=name
       (required) name of entry
 
   -r, --remote
       Remote
-
-  -t,
-  --metadatatype=ApexClass|AppMenu|AuraDefinitionBundle|EmailTemplate|FlexiPage|Layout|LightningComponentBundle|Navigati
-  onMenu|Network|Portal|Profile|Role|SiteDotCom|StaticResource
-      (required) metadata type
 
   --json
       format output as json
@@ -74,7 +74,7 @@ OPTIONS
 EXAMPLES
   $ sfdx fignore:add -n MyRole -t Role -r
      Inserted into .forceignore: 'MyRole.role'
-
+  
   $ sfdx fignore:add -n "Custom: Sales Profile" -t Profile -r
      Inserted into .forceignore: 'Custom%3A Sales Profile.profile'
 ```
