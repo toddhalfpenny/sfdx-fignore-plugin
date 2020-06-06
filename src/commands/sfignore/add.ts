@@ -8,7 +8,7 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('fignore', 'add');
+const messages = Messages.loadMessages('sfignore', 'add');
 
 export default class Add extends SfdxCommand {
 
@@ -36,10 +36,10 @@ export default class Add extends SfdxCommand {
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx fignore:add -n MyRole -t Role -r
+  `$ sfdx sfignore:add -n MyRole -t Role -r
   Inserted into .forceignore: 'MyRole.role'
   `,
-  `$ sfdx fignore:add -n "Custom: Sales Profile" -t Profile -r
+  `$ sfdx sfignore:add -n "Custom: Sales Profile" -t Profile -r
   Inserted into .forceignore: 'Custom%3A Sales Profile.profile'
   `
   ];
@@ -58,15 +58,15 @@ export default class Add extends SfdxCommand {
   protected static requiresProject = true;
 
   public async run(): Promise<AnyJson> {
-    const fignoreFile = '.forceignore';
+    const sfignoreFile = '.forceignore';
     let resultStr:string = '';
 
-    const sectionComment = '# Fignore: ' + this.flags.metadatatype;
+    const sectionComment = '# SFignore: ' + this.flags.metadatatype;
 
     const entryToWrite = this.encodeName() + this.suffixForMDT();
 
     // Check where to add the entry.
-    const fileLines:Array<string> = readFileSync(fignoreFile, 'utf8').toString().split('\n');
+    const fileLines:Array<string> = readFileSync(sfignoreFile, 'utf8').toString().split('\n');
     let entryExists:boolean = false
     let lineToInsertPos:number;
     fileLines.forEach((line, idx) => {
@@ -88,13 +88,13 @@ export default class Add extends SfdxCommand {
         fileLines.forEach(line => {
           strToWrite += line + '\n';
         });
-        writeFileSync(fignoreFile, strToWrite);
+        writeFileSync(sfignoreFile, strToWrite);
         resultStr = "Inserted into .forceignore: '" + entryToWrite + "'";
         this.ux.log(resultStr);
       } else {
-        // Write our new line at the end, preceeded by Fignore comment
+        // Write our new line at the end, preceeded by SFignore comment
         // add a line to a lyric file, using appendFile
-        appendFile(fignoreFile, '\n\n' + sectionComment + '\n' + entryToWrite, (err) => {
+        appendFile(sfignoreFile, '\n\n' + sectionComment + '\n' + entryToWrite, (err) => {
           if (err) {
             this.ux.error(err);
           } else {

@@ -46,7 +46,7 @@ jobs:
 
 workflows:
   version: 2
-  "sfdx-fignore-plugin":
+  "sfdx-sfignore-plugin":
     jobs:
       - node-latest
       - node-8

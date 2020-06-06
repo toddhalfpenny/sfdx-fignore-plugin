@@ -1,9 +1,9 @@
 {
-  "name": "fignore",
+  "name": "sfignore",
   "description": "Plugin to add entries to forceignore, to save folk remembering the syntax",
   "version": "0.0.1",
   "author": "Todd Halfpenny @toddhalfpenny",
-  "bugs": "https://github.com/toddhalfpenny/sfdx-fignore-plugin/issues",
+  "bugs": "https://github.com/toddhalfpenny/sfdx-sfignore-plugin/issues",
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
@@ -37,7 +37,7 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/toddhalfpenny/sfdx-fignore-plugin",
+  "homepage": "https://github.com/toddhalfpenny/sfdx-sfignore-plugin",
   "keywords": [
     "sfdx-plugin"
   ],
@@ -46,7 +46,7 @@
     "commands": "./lib/commands",
     "bin": "sfdx",
     "topics": {
-      "fignore": {
+      "sfignore": {
         "description": "Commands to modify the forceignore file."
       }
     },
@@ -54,7 +54,7 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "toddhalfpenny/sfdx-fignore-plugin",
+  "repository": "toddhalfpenny/sfdx-sfignore-plugin",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p test -t stylish",
